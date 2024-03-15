@@ -1,0 +1,153 @@
+@font-face {
+    font-family: 'xoxo';
+    src: url(font/xoxo.otf);
+}
+
+@font-face {
+    font-family: 'punk';
+    src: url(font/punk.otf);
+}
+
+
+body {
+    z-index: -500;
+    background: url(https://i.pinimg.com/originals/24/3a/18/243a1829582f5f7fc30b0337e2468818.gif)
+        no-repeat center center fixed;
+    font-family: cursive;
+    background-size: cover;
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    transition: 0.2s linear;
+
+}
+
+
+.darkBtn {
+    background-color: rgb(100, 51, 115);
+    border: 1px solid rgb(255, 169, 160);
+    color: rgb(253, 197, 164);
+    border-radius: 10px;
+    cursor: pointer;
+    width: 6%;
+    height: 6%;
+    margin-left: 2%;
+   
+}
+
+.board {
+    display: grid;
+    grid-template-columns: repeat(3, 150px);
+    grid-template-rows: repeat(3, 150px);
+    gap: 2px;
+    justify-content: center;
+    max-width: 600px; 
+    margin: 0 auto; 
+}
+    
+
+
+h1 {
+    text-align: center;
+    font-family: 'punk';
+    font-size: 40px;
+    color: rgb(253, 197, 164);
+}
+h1 span {
+    color: rgb(100, 51, 115);
+}
+#G {
+    color: #ffdca6;
+}
+#ele {
+    color: #ffdca6;
+}
+
+.cell {
+    border: 5px solid rgb(252, 236, 255);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 64px;
+    cursor: pointer;
+    font-family: sans-serif;
+    background: rgba(221, 98, 213, 0);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(11.8px);
+    -webkit-backdrop-filter: blur(11.8px);
+    font-family: 'xoxo';
+    font-size: 80px;
+   
+}
+
+footer {
+    
+    text-align: start;
+    transform: translateY(2rem);
+    font-size: 16px;
+    display: flex;
+    justify-content:space-between;
+    align-items: center;
+    margin:0;
+    position: relative;
+    bottom: 0;
+    margin-top: 5%;
+    width: 100%;
+    color: rgb(252, 236, 255);
+}
+
+.linkFooter a {
+    width: 50px;
+    height: 50px;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    border-radius: 20%;
+    overflow: hidden;
+    font-size: 2em;
+    position: relative;
+    /* margin-left: 10px; */
+    color: rgb(252, 236, 255);
+    transition: 0.5s;
+    
+}
+
+
+.linkFooter a:hover{
+    color: rgb(255, 169, 160);
+}
+
+footer p {
+    margin-left: 2%;
+}
+
+
+@media screen and (max-width: 560px) {
+    *{
+        transform: scale(0.85);        
+    }
+
+    h1 {
+        font-size: 8vh;
+    }
+
+    footer {
+        transform: translateY(50%);
+        font-size: 7.5vw;
+        text-align: center;
+        display: grid;
+        justify-content: space-around;
+    }
+    footer p {
+        font-size: 4vh;
+    }
+
+    .darkBtn {
+        width: 5rem;
+        height: 5rem;
+        margin-left: 40vw;
+    }
+}
+

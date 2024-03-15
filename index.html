@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" type="imagex/png" href="media/tic-tac-toe.png">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="style.css" id="theme-style">
+    
+    <title>Game of Old Lady</title>
+
+</head>
+<body>
+    <h1><span id="G">G</span>am<span>e</span> <span>o</span>f <span>O</span> <span id="ele">l</span>d Lad<span>y</span></h1>
+
+    <button class="darkBtn" onclick="toggleTheme()">Alternar Tema</button>
+
+    <div class="board" id="board">
+        <div class="cell" onclick="cellClicked(0)"></div>
+        <div class="cell" onclick="cellClicked(1)"></div>
+        <div class="cell" onclick="cellClicked(2)"></div>
+        <div class="cell" onclick="cellClicked(3)"></div>
+        <div class="cell" onclick="cellClicked(4)"></div>
+        <div class="cell" onclick="cellClicked(5)"></div>
+        <div class="cell" onclick="cellClicked(6)"></div>
+        <div class="cell" onclick="cellClicked(7)"></div>
+        <div class="cell" onclick="cellClicked(8)"></div>
+    </div>
+   
+
+
+    <script>
+
+        let currentPlayer = 'X';
+        let board = ['', '', '', '', '', '', '', '', ''];
+
+
+        
+        function cellClicked(index) {
+            if (board[index] === '') {
+                board[index] = currentPlayer;
+                document.getElementById('board').children[index].innerText = currentPlayer;
+                checkWinner();
+                currentPlayer = currentPlayer === 'X' ? 'O' : 'X';
+            }
+        }
+
+        function checkWinner() {
+            const winConditions = [
+                [0, 1, 2], [3, 4, 5], [6, 7, 8],
+                [0, 3, 6], [1, 4, 7], [2, 5, 8],
+                [0, 4, 8], [2, 4, 6]
+            ];
+
+            for (let condition of winConditions) {
+                const [a, b, c] = condition;
+                if (board[a] !== '' && board[a] === board[b] && board [a] === board[c]) {
+                    alert(`JOGADOR ${board[a]} VENCEU`);
+                    resetBoard();
+                    return;
+                }
+            }
+
+            if (!board.includes('')) {
+                alert('DEU VELHA');
+                resetBoard();
+            }
+        }
+
+        function resetBoard() {
+            currentPlayer = 'X';
+            board = ['', '', '', '', '', '', '', '', ''];
+            for (let i = 0; i < 9; i++) {
+                document.getElementById('board').children[i].innerText = '';
+            }
+        }
+
+
+    </script>
+
+    <script src="function.js"></script>
+
+    <footer>
+        <p>Desenvolvido por Henrike P.B. | &copy; 2024</p>
+        
+        <div class="linkFooter">
+            <a href="https://www.linkedin.com/in/henrikebraga/"><i class='bx bxl-linkedin-square'></i></a>
+            <a href="https://github.com/Henrike-PB"><i class='bx bxl-github'></i></a>
+            <a href="https://www.instagram.com/henrike_pajares/"><i class='bx bxl-instagram' src=""></i></a>
+        </div>
+
+    
+</footer>
+</body>
+</html>

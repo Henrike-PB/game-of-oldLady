@@ -1,0 +1,160 @@
+@font-face {
+    font-family: 'xoxo';
+    src: url(font/xoxo.otf);
+}
+
+@font-face {
+    font-family: 'punk';
+    src: url(font/punk.otf);
+}
+
+body {
+    z-index: -500;
+    background: url(https://i.pinimg.com/originals/74/5c/c9/745cc90fcc688569610f84bc5d2b2fd6.gif) no-repeat center center fixed;
+    font-family: cursive;
+    background-size: cover;
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    transition: 0.2s linear;
+}
+
+.board {
+    display: grid;
+    grid-template-columns: repeat(3, 150px);
+    grid-template-rows: repeat(3, 150px);
+    gap: 2px;
+    justify-content: center;
+   
+}
+
+.darkBtn {
+    background-color: rgb(33, 60, 94);
+    border: 1px solid #224c76;
+    color: rgb(254, 235, 188);
+    border-radius: 10px;
+    cursor: pointer;
+    width: 6%;
+    height: 6%;
+    margin-left: 2%;
+}
+
+h1 {
+    text-align: center;
+    font-family: 'punk';
+    font-size: 40px;
+    color: #224c76;
+}
+h1 span {
+    color: rgb(254, 235, 188);
+}
+#G {
+    color: rgb(33, 60, 94);
+}
+#ele {
+    color: #ffdca6;
+}
+
+.cell {
+    border: 5px solid rgb(9, 28, 54);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 64px;
+    cursor: pointer;
+    font-family: sans-serif;
+    background: rgba(221, 98, 213, 0);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(11.8px);
+    -webkit-backdrop-filter: blur(11.8px);
+    color: rgb(254, 235, 188);
+    font-family: 'xoxo';
+    font-size: 80px;
+    
+}
+
+
+footer {
+    text-align: start;
+    transform: translateY(2rem);
+    font-size: 16px;
+    display: flex;
+    justify-content:space-between;
+    align-items: center;
+    margin:0;
+    position: relative;
+    bottom: 0;
+    margin-top: 5%;
+    width: 100%;
+    color: rgb(252, 236, 255);
+}
+
+.linkFooter a {
+    width: 50px;
+    height: 50px;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    border-radius: 20%;
+    overflow: hidden;
+    font-size: 2em;
+    position: relative;
+    color: #E2D385;
+    transition: 0.5s;
+    
+}
+
+
+.linkFooter a:hover{
+    color: rgb(254, 235, 188);
+}
+
+footer p {
+    margin-left: 2%;
+    color:  #E2D385;
+}
+
+
+/* Responsividade da pagina */
+
+@media screen and (max-width: 560px) {
+    *{
+        transform: scale(0.85);        
+    }
+
+    h1 {
+        font-size: 8vh;
+        color: rgb(254, 235, 188);
+    }
+
+    h1 span {
+        color: #224c76;
+    }
+    
+#G {
+    color: #ffdca6;
+}
+#ele {
+    color: rgb(33, 60, 94);
+}
+    
+    
+    footer {
+        transform: translateY(50%);
+        font-size: 7.5vw;
+        text-align: center;
+        display: grid;
+        justify-content: space-around;
+    }
+    footer p {
+        font-size: 4vh;
+    }
+
+    .darkBtn {
+        width: 5rem;
+        height: 5rem;
+        margin-left: 40vw;
+    }
+}
