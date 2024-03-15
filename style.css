@@ -124,6 +124,27 @@ footer p {
 }
 
 
+/* barra de rolagem */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+
+::-webkit-scrollbar-thumb {
+    background: #7f8c8dda; 
+    border-radius: 4px; 
+}
+
+
+::-webkit-scrollbar-thumb:hover {
+    background: #616161; 
+}
+
+
+::-webkit-scrollbar-track {
+    background: #dfe6e9; 
+}
+
 @media screen and (max-width: 560px) {
     *{
         transform: scale(0.85);        
